@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,3 +76,10 @@ Route::get('/target', function(){
    return 'Target'; 
 });
 
+$customerController = CustomerController::class;
+
+Route::get('/customers', [$customerController, 'list']); //get(route path) , ชื่อตัวแปร, ชื่อ function ที่อยู่่ใน controller
+Route::get('/customers/{id}', [$customerController, 'detail']); // ถ้าอันไหนใน controller รับ id หรือ parameter ต้องระบุด้วย
+Route::get('/customers', [$customerController, 'create']); //ถ้าเป็นรับค่าา request object ไม่ต้องส่งค่ามันจะรู้เอง post กับ push ว่าไม่ต้องส่งค่า
+Route::get('/customers{id}', [$customerController, 'update']);
+Route::get('/customers{id}', [$customerController, 'delete']); //ถ้าเจอ error target class not found ให้ use controller ที่ข้างบน
