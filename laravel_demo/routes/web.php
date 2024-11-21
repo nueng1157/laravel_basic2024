@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UserController; //เวลามี controller ใหม่ ๆ มาต้อง use เสมอ
 
 Route::get('/', function () {
     return view('welcome');
@@ -83,3 +84,7 @@ Route::get('/customers/{id}', [$customerController, 'detail']); // ถ้าอ�
 Route::get('/customers', [$customerController, 'create']); //ถ้าเป็นรับค่าา request object ไม่ต้องส่งค่ามันจะรู้เอง post กับ push ว่าไม่ต้องส่งค่า
 Route::get('/customers{id}', [$customerController, 'update']);
 Route::get('/customers{id}', [$customerController, 'delete']); //ถ้าเจอ error target class not found ให้ use controller ที่ข้างบน
+
+$userController = UserController::Class;
+
+Route::get('/users', [$userController, 'list']); //[ชื่อ controller, ชื่อ function]
