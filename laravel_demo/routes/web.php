@@ -85,6 +85,9 @@ Route::get('/customers', [$customerController, 'create']); //ถ้าเป็�
 Route::get('/customers{id}', [$customerController, 'update']);
 Route::get('/customers{id}', [$customerController, 'delete']); //ถ้าเจอ error target class not found ให้ use controller ที่ข้างบน
 
-$userController = UserController::Class;
-
-Route::get('/users', [$userController, 'list']); //[ชื่อ controller, ชื่อ function]
+Route::get('/users/list', [UserController::class, 'list']);
+Route::get('/users/form', [UserController::class, 'form']);
+Route::post('/users', [UserController::class, 'create']);
+Route::get('/users/{id}', [UserController::class, 'edit']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::delete('/users/remove/{id}', [UserController::class, 'remove']);
