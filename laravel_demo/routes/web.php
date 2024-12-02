@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController; //เวลามี controller ใหม่ ๆ มาต้อง use เสมอ
+use App\Http\Controllers\BackOfficeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -91,3 +92,10 @@ Route::post('/users', [UserController::class, 'create']);
 Route::get('/users/{id}', [UserController::class, 'edit']);
 Route::put('/users/{id}', [UserController::class, 'update']);
 Route::delete('/users/remove/{id}', [UserController::class, 'remove']);
+
+Route::get('/user/signIn', [UserController::class, 'signIn']);
+Route::post('/user/signInProcess', [UserController::class, 'signInProcess']);
+Route::get('/user/signOut', [UserController::class, 'signOut']);
+Route::get('/user/info', [UserController::class, 'info']);
+
+Route::get('/backoffice', [BackOfficeController::class, 'index']);

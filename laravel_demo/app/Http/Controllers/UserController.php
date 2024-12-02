@@ -72,7 +72,7 @@ class UserController extends Controller
             'password' => $request->password,
         ]);
 
-        return redirect('/users/list');
+        return redirect('/userss/list');
     }
 
     public function remove($id) {
