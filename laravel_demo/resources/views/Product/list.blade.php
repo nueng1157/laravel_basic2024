@@ -8,7 +8,7 @@
     Add Product
 </a>
 
-<form action="/product/search" method="post">
+<!--<form action="/product/search" method="post">
     @csrf
     <div class="input-group mt-3">
         <input 
@@ -21,7 +21,7 @@
             <i class="fa fa-search"></i>
         </button>
     </div>
-</form>
+</form>-->
 
 <table class="table table-bordered mt-3">
     <thead>
@@ -41,12 +41,12 @@
             <td>{{ $product->price }}</td>
             <td>{{ $product->qty }}</td>
             <td>{{ $product->detail }}</td>
-            <td>{{ $product->productType->name }}</td>
+           
             <td>
                 <a href="/product/{{ $product->id }}" class="btn btn-primary">
                     <i class="fa fa-edit"></i>
                 </a>
-                <a href="/product/remove/{{ $product->id }}" class="btn btn-danger">
+                <a href="/product/remove/{{ $product->id }}" class="btn btn-danger">  <!--คลิก link วิ่งไปที่ product ส่งค่า id ไป-->
                     <i class="fa fa-trash"></i>
                 </a>
             </td>

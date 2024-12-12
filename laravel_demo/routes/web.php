@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController; //เวลามี controller ใหม่ ๆ มาต้อง use เสมอ
 use App\Http\Controllers\BackOfficeController;
-use App\Http\Middleware\EnsureToenIsValid;
+use App\Http\Middleware\EnsureTokenIsValid;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
@@ -100,16 +100,20 @@ Route::delete('/users/remove/{id}', [UserController::class, 'remove']);
 //User Sign in
 Route::get('/user/signIn', [UserController::class, 'signIn']);
 Route::post('/user/signInProcess', [UserController::class, 'signInProcess']);
-Route::get('/user/signOut', [UserController::class, 'signOut'])->Middleware(EnsureToenIsValid::class);
-Route::get('/user/info', [UserController::class, 'info'])->Middleware(EnsureToenIsValid::class);
+Route::get('/user/signOut', [UserController::class, 'signOut'])->Middleware(EnsureTokenIsValid::class);
+Route::get('/user/info', [UserController::class, 'info'])->Middleware(EnsureTokenIsValid::class);
 
 //Back office
-Route::get('/backoffice', [BackOfficeController::class, 'index'])->Middleware(EnsureToenIsValid::class);
+Route::get('/backoffice', [BackOfficeController::class, 'index'])->Middleware(EnsureTokenIsValid::class);
 
 // Route with Product
 Route::get('/product/list', [ProductController::class, 'list']);
 Route::get('/product/form', [ProductController::class, 'form']);
-Route::post('/product', [ProductController::class, 'create']);
+Route::post('/product', [ProductController::class, 'save']);
 Route::get('/product/{id}', [ProductController::class, 'edit']);
 Route::put('/product/{id}', [ProductController::class, 'update']);
 Route::get('/product/remove/{id}', [ProductController::class, 'remove']);
+
+// 19/11/2024
+Route::post('/product/search', [ProductController::class, 'search']);
+Route::get('/product-sort', [ProductController::class, 'sort']);

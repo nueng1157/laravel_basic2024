@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class EnsureToenIsValid
+class EnsureTokenIsValid
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class EnsureToenIsValid
         if (!session()->has('user_id')) {
             return redirect('/user/signIn');
         }
-            return $next($request);
-        
+
+        return $next($request);
     }
 }
