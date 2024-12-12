@@ -8,7 +8,7 @@
     Add Product
 </a>
 
-<!--<form action="/product/search" method="post">
+<form action="/product/search" method="post">
     @csrf
     <div class="input-group mt-3">
         <input 
@@ -21,7 +21,7 @@
             <i class="fa fa-search"></i>
         </button>
     </div>
-</form>-->
+</form>
 
 <table class="table table-bordered mt-3">
     <thead>
@@ -30,7 +30,7 @@
             <th>Price</th>
             <th>Qty</th>
             <th>Detail</th>
-            <th>Product Type</th>
+            <!--<th>Product Type</th>-->
             <th width="110px">Action</th>
         </tr>
     </thead>

@@ -7,6 +7,8 @@ use App\Models\Product;
 
 
 
+
+
 class ProductController extends Controller
 {
     public function list(){
@@ -71,7 +73,7 @@ class ProductController extends Controller
         }
     }
 
-    /*public function search(Request $request)
+    public function search(Request $request)
     {
         $keyword = $request->input('keyword');
 
@@ -91,7 +93,8 @@ class ProductController extends Controller
         return view('product.list', compact('products', 'sort'));
     }
 
-    public function priceMoreThan() {
+  
+   /*   public function priceMoreThan() {
         $price = 800;
         $products = Product::where('price', '>', $price)->get();
 
@@ -147,7 +150,8 @@ class ProductController extends Controller
         $productType = ProductType::find($productTypeId);
 
         return view('product.list-by-product-type', compact('productType'));
-    } */
+    } 
+        */
 
 }
 

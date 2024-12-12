@@ -115,5 +115,6 @@ Route::put('/product/{id}', [ProductController::class, 'update']);
 Route::get('/product/remove/{id}', [ProductController::class, 'remove']);
 
 // 19/11/2024
+Route::get('/product/search', [ProductController::class, 'search']);
 Route::post('/product/search', [ProductController::class, 'search']);
 Route::get('/product-sort', [ProductController::class, 'sort']);
