@@ -94,7 +94,7 @@ class ProductController extends Controller
     }
 
   
-   /*   public function priceMoreThan() {
+      public function priceMoreThan() {
         $price = 800;
         $products = Product::where('price', '>', $price)->get();
 
@@ -108,7 +108,7 @@ class ProductController extends Controller
         return view('product.list', compact('products', 'price'));
     }
 
-    public function priceBetween() {
+   public function priceBetween() {
         $priceFrom = 800;
         $priceTo = 1000;
         $products = Product::whereBetween('price', [$priceFrom, $priceTo])->get();
@@ -116,7 +116,7 @@ class ProductController extends Controller
         return view('product.list', compact('products', 'priceFrom', 'priceTo'));
     }
 
-    public function priceNotBetween() {
+   public function priceNotBetween() {
         $priceFrom = 800;
         $priceTo = 1000;
         $products = Product::whereNotBetween('price', [$priceFrom, $priceTo])->get();
@@ -124,7 +124,7 @@ class ProductController extends Controller
         return view('product.list', compact('products', 'priceFrom', 'priceTo'));
     }
 
-    public function priceIn() {
+   public function priceIn() {
         $prices = [800, 900, 1000];
         $products = Product::whereIn('price', $prices)->get();
 
@@ -140,7 +140,7 @@ class ProductController extends Controller
         return view('product.max-min-count-avg', compact('priceMax', 'priceMin', 'priceCount', 'priceAvg')); 
     }
 
-    public function productTypeList() {
+     /* public function productTypeList() {
         $productTypes = ProductType::orderBy('name', 'asc')->get();
 
         return view('product.product-type-list', compact('productTypes'));
