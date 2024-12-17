@@ -124,3 +124,9 @@ Route::get('/product-price-between', [ProductController::class, 'priceBetween'])
 Route::get('/product-price-not-between', [ProductController::class, 'priceNotBetween']);
 Route::get('/product-price-in', [ProductController::class, 'priceIn']);
 Route::get('/product-max-min-count-avg', [ProductController::class, 'priceMaxMinCountAvg']);
+
+Route::get('/product-type-list', [ProductController::class, 'productTypeList']);
+Route::get('/list-by-product-type/{productTypeId}', [ProductController::class, 'listByProductType']);
+
+// livewire
+//Route::get('/product-type/list', [ProductTypeController::class, 'index']);

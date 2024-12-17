@@ -11,7 +11,7 @@ class ProductType extends Model
     public $timestamps = false;
 
     public function products() {
-        return $this->hasMany(Product::class, 'product_type_id', 'id');
+        return $this->hasMany(Product::class, 'product_type_id', 'id'); //1 types มีได้หลาย products
     }
 }
 
