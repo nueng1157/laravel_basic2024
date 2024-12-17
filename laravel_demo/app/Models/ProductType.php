@@ -14,3 +14,4 @@ class ProductType extends Model
         return $this->hasMany(Product::class, 'product_type_id', 'id');
     }
 }
+

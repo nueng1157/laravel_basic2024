@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductType;
 
 
 
@@ -22,9 +23,9 @@ class ProductController extends Controller
 
     public function form()
     {
-        //$productTypes = ProductType::orderBy('name', 'asc')->get();
+        $productTypes = ProductType::orderBy('name', 'asc')->get();
 
-        return view('product.form');
+        return view('product.form',compact('productTypes'));
     }
 
     public function save(Request $request)
@@ -41,9 +42,9 @@ class ProductController extends Controller
   {
         try {
             $product = Product::find($id);
-            //$productTypes = ProductType::orderBy('name', 'asc')->get();
+            $productTypes = ProductType::orderBy('name', 'asc')->get();
 
-            //return view('product.form', compact('product', 'productTypes'));
+            return view('product.form', compact('product', 'productTypes'));
             return view('product.form', compact('product'));
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
