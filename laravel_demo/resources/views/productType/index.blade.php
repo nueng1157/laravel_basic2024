@@ -1,7 +1,5 @@
 @extends('layout')
 
 @section('content')
-
-    @livewire('counter')
-    
+    @livewire('productTypeComponent')
 @endsection

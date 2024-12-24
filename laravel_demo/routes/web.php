@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController; //เวลามี controller ให�
 use App\Http\Controllers\BackOfficeController;
 use App\Http\Middleware\EnsureTokenIsValid;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -129,4 +130,4 @@ Route::get('/product-type-list', [ProductController::class, 'productTypeList']);
 Route::get('/list-by-product-type/{productTypeId}', [ProductController::class, 'listByProductType']);
 
 // livewire
-//Route::get('/product-type/list', [ProductTypeController::class, 'index']);
+Route::get('/product-type/list', [ProductTypeController::class, 'index']);

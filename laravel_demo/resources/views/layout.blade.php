@@ -16,7 +16,7 @@
         @yield('content')  <!--  /*ไว้แสดงข้อมูล*/บรรทัดนี้จะเปลี่ยนแปลงตลอด -->
     </div>
 
+
     @livewireScripts
-    
 </body>
 </html>

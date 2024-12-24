@@ -10,5 +10,3 @@ class ProductTypeController extends Controller
         return view('productType.index');
     }
 }
-
-
